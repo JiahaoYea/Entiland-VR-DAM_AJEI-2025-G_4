@@ -87,6 +87,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
             for (int i = 0; i < selectedObjects.Count; i++)
             {
                 GameObject spawnedObject = Instantiate(selectedObjects[i], objectPositions[i].transform.position, Quaternion.identity);
+                spawnedObject.transform.parent = objectPositions[i].transform;
                 spawnedObjects.Add(spawnedObject);
             }
         }
@@ -109,13 +110,9 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 }
 
             }
-            if(ilegalProps == 1)
+            if(ilegalProps >= 1)
             {
                 isSuitcaseLegal = false;
-            }else if(ilegalProps >= 2)
-            {
-                isSuitcaseLegal = false;
-                //no puede cachear.
             }
         }
         void Update()

@@ -7,78 +7,108 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
 {
     public class Cinta : MonoBehaviour
     {
-        public Transform suitcasPositionA;
-        public Transform suitcasPositionB;
-        public Transform suitcasPositionC;
+        public Transform suitcasPositionA;  // Punto de inicio
+        public Transform suitcasPositionB;  // Punto intermedio
+        public Transform suitcasPositionC;  // Punto final
 
-        private CheckInSystem objects;
+        GameObject suitcase;
+        public GameObject suitcasePrefab;
+        positionObjects check;
 
-        public GameObject suitcase;
-        public float moveSpeed; 
+        public float moveSpeed = 2f;
 
-        private bool isMoving = true;
-        public  bool isCorrect = true;
-        private bool isButtonPressed = false;
+        public bool isMoving = false;
+        bool isCorrect = true;
+        bool isSpawning;
+        public bool isButtonGreen;
+        public bool isButtonPressed = false;
 
         private void Start()
         {
-            objects = suitcase.GetComponent<CheckInSystem>();
+
+            SpawnSuitcase();
         }
 
         private void Update()
         {
             if (isMoving)
             {
-                if (Vector3.Distance(suitcase.transform.position, suitcasPositionB.position) > 2f)
-                    suitcase.transform.localPosition += suitcasPositionB.position * moveSpeed * Time.deltaTime;
-                else
+                Debug.Log("Moviendo hacia B...");
+                suitcase.transform.position = Vector3.MoveTowards(
+                    suitcase.transform.position,
+                    suitcasPositionB.position,
+                    moveSpeed * Time.deltaTime
+                );
+
+                if (Vector3.Distance(suitcase.transform.position, suitcasPositionB.position) < 0.1f)
                 {
+                    Debug.Log("Llegó a B");
                     isMoving = false;
-                    isButtonPressed = true;
                 }
             }
 
-            if (isButtonPressed)
+            if (isButtonPressed && !isMoving)
             {
-                if (!isCorrect)
+                if (isButtonGreen != isCorrect)
                 {
+                    Debug.Log("Maleta incorrecta, destruyendo...");
                     Destroy(suitcase);
                     Points.Instance.hp--;
+                    isButtonPressed = false;
+                    SpawnSuitcase();
+
                 }
                 else
                 {
-                    if (Vector3.Distance(suitcase.transform.position, suitcasPositionC.position) > 2f)
-                        suitcase.transform.localPosition += suitcasPositionC.position * moveSpeed * Time.deltaTime;
-                    else
+                    Debug.Log("Moviendo hacia C...");
+                    //Esto de vez en cuaando peta
+                    //suitcase.transform.position = Vector3.MoveTowards(
+                        //suitcase.transform.position,
+                        //suitcasPositionC.position,
+                        //moveSpeed * Time.deltaTime
+                    //);
+
+                    if (Vector3.Distance(suitcase.transform.position, suitcasPositionC.position) < 0.1f)
                     {
+                        Debug.Log("Llegó a C, destruyendo...");
+                        Destroy(suitcase);
+                        Debug.Log("Destruido");
+
                         isButtonPressed = false;
-                        Destroy(suitcase, 2f);
+                        Debug.Log("2");
+
+                        SpawnSuitcase();
+                        Debug.Log("Spawned");
+
+
                     }
 
-                    Points.Instance.currentPoints += 10;
                 }
-            }
-
-            if (objects.isOccupied == false && suitcase == null)
-            {
-                Vector3 initialPos = suitcasPositionA.transform.position;
-                Instantiate(suitcase, initialPos, Quaternion.identity);
-                objects = suitcase.GetComponent<CheckInSystem>();         
             }
         }
 
         public void SpawnSuitcase()
         {
-            isButtonPressed = true;
-            StartCoroutine(SuitcaseSpawnTime());
+            if (suitcase ==  null)
+            {
+                isButtonPressed = false;
+                isSpawning = true;
+                if (isSpawning)
+                {
+                    suitcase = Instantiate(suitcasePrefab, suitcasPositionA.position, Quaternion.Euler(0f, 90f, -90f));
+                    suitcase.transform.parent = transform;
+                    check = suitcase.GetComponent<positionObjects>();
+                    isCorrect = check.isSuitcaseLegal;
+                    isMoving = true;
+                    isSpawning = false;
+
+                }
+            }
+            else
+            {
+                Debug.Log("notnull");
+            }
         }
 
-        IEnumerator SuitcaseSpawnTime()
-        {
-            yield return new WaitForSeconds(2.5f);
-            Instantiate(suitcase, suitcasPositionA.transform.position, Quaternion.identity);
-            isMoving = true;
-            objects = suitcase.GetComponent<CheckInSystem>();
-        }
     }
 }
