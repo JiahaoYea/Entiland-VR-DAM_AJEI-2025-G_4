@@ -16,7 +16,7 @@ ModelImporter:
     second: {fileID: 2100000, guid: be78133aba64f1340b3dc83bab998850, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 2
+    materialName: 1
     materialSearch: 0
     materialLocation: 1
   animations:
@@ -109,7 +109,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
