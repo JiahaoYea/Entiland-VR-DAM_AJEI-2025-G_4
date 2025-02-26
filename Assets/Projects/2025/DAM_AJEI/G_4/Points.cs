@@ -6,7 +6,6 @@ public class Points : MonoBehaviour
 {
     public static Points Instance;
 
-
     public int currentPoints;
     public int hp;
 
@@ -32,6 +31,7 @@ public class Points : MonoBehaviour
         if (hp <= 0)
         {
             Application.Quit();
+            //Que te lleve a una UI de restart game
         }
 
     }
