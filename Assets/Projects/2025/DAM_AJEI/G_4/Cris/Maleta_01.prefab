@@ -173,9 +173,8 @@ MonoBehaviour:
   - {fileID: 7947010318749314299, guid: 3a2c199c0c39b8e4bab98f23c8064258, type: 3}
   canSpawn: 0
   spawnedObjects: []
-  objectToSpawn: []
-  isSuitcaseLegal: 1
-  illegalObjectPercentage: 10
+  isSuitcaseLegal: 0
+  illegalObjectPercentage: 20
 --- !u!1 &4812248498399703318
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,14 +13,14 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
         public bool canSpawn = false;
 
         public List<GameObject> spawnedObjects;
-        public List<GameObject> objectToSpawn;
 
         public bool isSuitcaseLegal = true;
         int ilegalProps = 0;
 
         void Start()
         {
-            SpawnObjectsAtRandomIndex();
+            ilegalProps = 0;
+
         }
 
         public float illegalObjectPercentage = 0f;
@@ -96,29 +96,31 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
 
         public void CheckIfLegalSuitcase()
         {
-            for (int i = 0; i < objectPositions.Count; i++)
+            SpawnObjectsAtRandomIndex();
+            ilegalProps = 0;
+            for (int i = 0; i < spawnedObjects.Count; i++)
             {
-                ObjectBase obj = objectsToSpawn[i].GetComponent<ObjectBase>();
+                ObjectBase obj = spawnedObjects[i].GetComponent<ObjectBase>();
                 if (!obj.isLegal)
                 {
-                    Debug.Log("Maleta Ilegal");
+                    Debug.Log("Objeto ilegal");
                     ilegalProps++;
                 }
                 else
                 {
-                    Debug.Log("Maleta Legal");
+                    Debug.Log("Objeto Legal");
                 }
 
             }
-            if(ilegalProps >= 1)
+            Debug.Log(ilegalProps);
+            if (ilegalProps > 0)
             {
                 isSuitcaseLegal = false;
             }
-        }
-        void Update()
-        {
-            if (canSpawn)
-                SpawnObjectsAtRandomIndex();
+            else
+            {
+                isSuitcaseLegal = true;
+            }
         }
     }
 }
