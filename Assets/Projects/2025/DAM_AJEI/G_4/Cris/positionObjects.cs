@@ -86,7 +86,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
 
             for (int i = 0; i < selectedObjects.Count; i++)
             {
-                GameObject spawnedObject = Instantiate(selectedObjects[i], objectPositions[i].transform.position, Quaternion.identity);
+                GameObject spawnedObject = Instantiate(selectedObjects[i], objectPositions[i].transform.position, selectedObjects[i].transform.rotation);
                 spawnedObject.transform.parent = objectPositions[i].transform;
                 spawnedObjects.Add(spawnedObject);
             }

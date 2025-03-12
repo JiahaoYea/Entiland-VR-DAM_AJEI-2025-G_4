@@ -97,7 +97,7 @@ Transform:
   - {fileID: 328216330006611643}
   - {fileID: 2062177874347655235}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &8098406384223956738
 MeshFilter:
@@ -129,7 +129,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 7108631595466352291, guid: 7f21af3e9b4c3554993d74814f106cab, type: 3}
   - {fileID: 6032018737518785298, guid: 7f21af3e9b4c3554993d74814f106cab, type: 3}
-  - {fileID: 2100000, guid: 1e64713932479d84e8a1fae2fdae14f0, type: 2}
+  - {fileID: 7108631595466352291, guid: 7f21af3e9b4c3554993d74814f106cab, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,9 +168,15 @@ MonoBehaviour:
   - {fileID: 1414838284543142437}
   - {fileID: 4812248498399703318}
   objectsToSpawn:
-  - {fileID: 7947010318749314299, guid: 9461aa99173a26644998a92eb114e685, type: 3}
-  - {fileID: 7947010318749314299, guid: af11dccb440e35e43a9ea2a44839d5eb, type: 3}
-  - {fileID: 7947010318749314299, guid: 3a2c199c0c39b8e4bab98f23c8064258, type: 3}
+  - {fileID: 2777774717733081088, guid: b21e5723d6e5d4e4c99a295c1a2c70bc, type: 3}
+  - {fileID: 3204418207236012961, guid: d5cd6569880f09c4db8e4778bd39cc57, type: 3}
+  - {fileID: 1241625365726268778, guid: e80403f9ee8b2464daaae2972c623040, type: 3}
+  - {fileID: 3120114024283593955, guid: 16382b1de3653ee4180f947e88ffae13, type: 3}
+  - {fileID: 9091380244611024788, guid: 395cb3b8b594fc747b0de6abfddc9807, type: 3}
+  - {fileID: 1325902911362257828, guid: 4c665feabdbe4864aa3c96f2bdf38859, type: 3}
+  - {fileID: 607494133154409908, guid: 4ebcdb0219c4ad3418174eb6276a0f8b, type: 3}
+  - {fileID: 3004165291828845682, guid: 4dcd42da7e415604aa9e5980884ae223, type: 3}
+  - {fileID: 4905030818641909582, guid: 865b2dd0d08baa74d99a758538280bed, type: 3}
   canSpawn: 0
   spawnedObjects: []
   isSuitcaseLegal: 0
