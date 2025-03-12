@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 607072170870981580}
   - component: {fileID: 607072170870981581}
   m_Layer: 0
-  m_Name: SmashTomato
+  m_Name: SmashTaza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,14 +221,14 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.754717, g: 0.05339978, b: 0.05339978, a: 1}
+      maxColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.3962264, g: 0, b: 0.019190175, a: 1}
-        key1: {r: 0.6528857, g: 0.062374204, b: 0.0050797528, a: 1}
-        key2: {r: 0.745283, g: 0.08482892, b: 0, a: 0}
+        key0: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
+        key1: {r: 0.68235296, g: 0.6039216, b: 0.59607846, a: 1}
+        key2: {r: 0.6862745, g: 0.65882355, b: 0.654902, a: 0}
         key3: {r: 1, g: 0.27058825, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
