@@ -1,38 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Points : MonoBehaviour
+namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
 {
-    public static Points Instance;
-
-    public int currentPoints;
-    public int hp;
-
-    private void Awake()
+    public class Points : MonoBehaviour
     {
-        if (Instance == null)
+        public static Points Instance;
+
+        public int currentPoints;
+        public int hp;
+
+        private void Awake()
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); 
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+        void Start()
         {
-            Destroy(gameObject);
-        }
-    }
-    void Start()
-    {
-        hp = 3;
-    }
-
-    void Update()
-    {
-        if (hp <= 0)
-        {
-            Application.Quit();
-            //Que te lleve a una UI de restart game
+            hp = 3;
         }
 
+        void Update()
+        {
+            if (hp <= 0)
+            {
+                Application.Quit();
+                //Que te lleve a una UI de restart game
+            }
+
+        }
     }
 }

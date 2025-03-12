@@ -112,7 +112,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 }
 
             }
-            Debug.Log(ilegalProps);
             if (ilegalProps > 0)
             {
                 isSuitcaseLegal = false;

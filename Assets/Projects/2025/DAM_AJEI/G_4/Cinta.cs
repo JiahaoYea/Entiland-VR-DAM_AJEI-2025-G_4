@@ -13,6 +13,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
         public Transform suitcasPositionD;  // Punto final
 
         GameObject suitcase;
+        public GameObject blueButton;
         public GameObject suitcasePrefab;
         positionObjects check;
 
@@ -25,10 +26,11 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
         public bool isButtonPressed = false;
         bool isMovingToC = false;
 
-
+        public PersonManager personManager;
         private void Start()
         {
             SpawnSuitcase();
+            blueButton.SetActive(false);
         }
 
         private void Update()
@@ -67,57 +69,60 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
 
             if (isButtonPressed && !isMoving)
             {
-                if (!isButtonGreen)
+                if (!isButtonGreen) //boton rojo
                 {
-                    if (!isLegal) // Maleta incorrecta
+                    if (!isLegal) // Maleta ilegal
                     {
                         Points.Instance.hp++; // Ganas 1 punto solo una vez
+                        blueButton.SetActive(true);
                         Debug.Log("Maleta incorrecta, ganando puntos...");
+                        Destroy(suitcase.gameObject);
                     }
-                    else // Maleta correcta
+                    else // Maleta legal
                     {
                         Points.Instance.hp--; // Pierdes 1 punto solo una vez
                         Debug.Log("Maleta correcta, perdiendo puntos...");
-                    }
-
-                    // Destruir la maleta y spawnear una nueva
-                    Debug.Log("Destruyendo maleta...");
-                    Destroy(suitcase.gameObject);
-                    isButtonPressed = false;
-                    suitcase = null;
-                    SpawnSuitcase();
-                }
-                else
-                {
-
-
-                    Debug.Log("Moviendo maleta hacia C...");
-                    suitcase.transform.position = Vector3.MoveTowards(
-                        suitcase.transform.position,
-                        suitcasPositionD.position,
-                        moveSpeed * Time.deltaTime
-                    );
-
-                    if (Vector3.Distance(suitcase.transform.position, suitcasPositionD.position) < 0.1f)
-                    {
-                        if (isLegal)
-                        {
-                            Points.Instance.hp++; // Ganas 1 punto solo una vez
-                            Debug.Log("Maleta legal, ganando puntos...");
-                        }
-                        // Si la maleta es incorrecta
-                        else
-                        {
-                            Points.Instance.hp--; // Pierdes 1 punto solo una vez
-                            Debug.Log("Maleta incorrecta, perdiendo puntos...");
-                        }
-                        Debug.Log("Llegó a C, destruyendo...");
+                        Debug.Log("Destruyendo maleta...");
+                        DestroyPerson();
                         Destroy(suitcase.gameObject);
-                        Debug.Log("Destruido");
                         isButtonPressed = false;
                         suitcase = null;
                         SpawnSuitcase();
-                        Debug.Log("Spawned");
+                    }
+                }
+                else // boton verde
+                {
+                    if (suitcase != null)
+                    {
+                        Debug.Log("Moviendo maleta hacia C...");
+                        suitcase.transform.position = Vector3.MoveTowards(
+                            suitcase.transform.position,
+                            suitcasPositionD.position,
+                            moveSpeed * Time.deltaTime
+                        );
+
+                        if (Vector3.Distance(suitcase.transform.position, suitcasPositionD.position) < 0.1f)
+                        {
+                            if (isLegal)
+                            {
+                                Points.Instance.hp++; // Ganas 1 punto solo una vez
+                                Debug.Log("Maleta legal, ganando puntos...");
+                            }
+                            // Si la maleta es incorrecta
+                            else
+                            {
+                                Points.Instance.hp--; // Pierdes 1 punto solo una vez
+                                Debug.Log("Maleta incorrecta, perdiendo puntos...");
+                            }
+                            DestroyPerson();
+                            Debug.Log("Llegó a C, destruyendo...");
+                            Destroy(suitcase.gameObject);
+                            Debug.Log("Destruido");
+                            isButtonPressed = false;
+                            suitcase = null;
+                            SpawnSuitcase();
+                            Debug.Log("Spawned");
+                        }
                     }
                 }
             }
@@ -147,6 +152,12 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
                 Debug.Log("notnull");
             }
         }
+        public void DestroyPerson()
+        {
+            Destroy(personManager.person);
+            personManager.person = null;
+            personManager.SpawnPerson();
 
+        }
     }
 }
