@@ -8,6 +8,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
     public class ButtonManager : MonoBehaviour
     {
         public Cinta cinta;
+        public PersonManager personManager;
+        public DetectObjects detectObjects;
         public void greenButtonPressed()
         {
             if (!cinta.isMoving) 
@@ -28,8 +30,27 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
 
         public void blueButtonPressed()
         {
-            //Inspect the suitcase
-            Debug.Log("BlueButton");
+            if (!personManager.isMoving)
+            {
+                personManager.isButtonBlue = true;
+                personManager.TeleportPlayerToSearch();
+                detectObjects.ResetPosition();
+            }
+        }
+
+        public void GreenSearchButton()
+        {
+            personManager.TeleportPlayerToStartPos();
+            cinta.SpawnSuitcase();
+            cinta.DestroyPerson();
+            detectObjects.HideButtons();
+        }
+        public void RedSearchButton()
+        {
+            personManager.TeleportPlayerToStartPos();
+            cinta.SpawnSuitcase();
+            cinta.DestroyPerson();
+            detectObjects.HideButtons();
         }
     }
 }
