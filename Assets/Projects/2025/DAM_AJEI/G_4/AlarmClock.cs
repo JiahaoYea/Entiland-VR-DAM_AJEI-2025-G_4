@@ -2,57 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlarmClock : MonoBehaviour
+namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
 {
-    [SerializeField] private float minTime = 10f;  
-    [SerializeField] private float maxTime = 20f; 
-
-    public AudioSource alarmAudioSource;
-
-    private float timer = 0f;       
-    private float nextAlarmTime;    
-    private bool alarmIsPlaying = false;
-
-    private void Start()
+    public class AlarmClock : MonoBehaviour
     {
-        SetRandomAlarmTime();
-    }
+        [SerializeField] private float minTime = 10f;
+        [SerializeField] private float maxTime = 20f;
 
-    private void Update()
-    {
-        if (!alarmIsPlaying)
+        public AudioSource alarmAudioSource;
+
+        private float timer = 0f;
+        private float nextAlarmTime;
+        private bool alarmIsPlaying = false;
+
+        private void Start()
         {
-            timer += Time.deltaTime;
+            SetRandomAlarmTime();
+        }
 
-            if (timer >= nextAlarmTime)
+        private void Update()
+        {
+            if (!alarmIsPlaying)
             {
-                StartAlarm();
+                timer += Time.deltaTime;
+
+                if (timer >= nextAlarmTime)
+                {
+                    StartAlarm();
+                }
             }
         }
-    }
 
-    private void StartAlarm()
-    {
-        alarmIsPlaying = true;
-        alarmAudioSource.Play();
-        Debug.Log("¡Alarma sonando!");
-    }
-
-    public void StopAlarm()
-    {
-        if (alarmIsPlaying)
+        private void StartAlarm()
         {
-            alarmAudioSource.Stop();
-            alarmIsPlaying = false;
-  
-            SetRandomAlarmTime();
-            Debug.Log("Alarma detenida. Se reinicia el contador.");
+            alarmIsPlaying = true;
+            alarmAudioSource.Play();
+            Debug.Log("¡Alarma sonando!");
         }
-    }
 
-    private void SetRandomAlarmTime()
-    {
-        timer = 0f;
-        nextAlarmTime = Random.Range(minTime, maxTime);
+        public void StopAlarm()
+        {
+            if (alarmIsPlaying)
+            {
+                alarmAudioSource.Stop();
+                alarmIsPlaying = false;
+
+                SetRandomAlarmTime();
+                Debug.Log("Alarma detenida. Se reinicia el contador.");
+            }
+        }
+
+        private void SetRandomAlarmTime()
+        {
+            timer = 0f;
+            nextAlarmTime = Random.Range(minTime, maxTime);
+        }
     }
 }
