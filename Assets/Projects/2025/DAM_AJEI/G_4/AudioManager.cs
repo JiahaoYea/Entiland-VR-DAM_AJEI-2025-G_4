@@ -8,8 +8,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
     {
         public static AudioManager Instance { get; private set; }
 
-        SpriteRenderer obj;
-
         [Header("----- Audio Source -----")]
         public AudioSource musicSource;
         public AudioSource SFXSource;
@@ -46,13 +44,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
         {
             SFXSource.volume = volumen;
             SFXSource.PlayOneShot(clip);
-            try {
-                obj = GetComponent<SpriteRenderer>();
-            }
-            catch
-            {
-                Debug.Log("Error null, delete the project");
-            }
         }
     }
 }
