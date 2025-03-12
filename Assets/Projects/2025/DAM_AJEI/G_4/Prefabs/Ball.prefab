@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4167956031601591863
+--- !u!1 &5094310784755980546
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7719889087699609517}
-  - component: {fileID: 821997161273288610}
-  - component: {fileID: 6278137327248728378}
-  - component: {fileID: 1818058864650929972}
-  - component: {fileID: 8781265002039452836}
-  - component: {fileID: 1073476807988790339}
-  - component: {fileID: 4858918627225362532}
-  - component: {fileID: 8069300822592663538}
+  - component: {fileID: 8846877689746442798}
+  - component: {fileID: 5993757780026525303}
+  - component: {fileID: 6389445101993202905}
+  - component: {fileID: 8294441042381703708}
+  - component: {fileID: 637811990228877056}
+  - component: {fileID: 811945968639104306}
+  - component: {fileID: 1109121859705619069}
+  - component: {fileID: 5330022796446150100}
+  - component: {fileID: 4728537591236004671}
   m_Layer: 0
-  m_Name: pelota (1)
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7719889087699609517
+--- !u!4 &8846877689746442798
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167956031601591863}
+  m_GameObject: {fileID: 5094310784755980546}
   m_LocalRotation: {x: -0, y: -0, z: 0.00043630067, w: 0.99999994}
-  m_LocalPosition: {x: 0.28364563, y: 2.43, z: -10.1395}
-  m_LocalScale: {x: 7.7076874, y: 7.7076874, z: 7.7076874}
+  m_LocalPosition: {x: 1.393, y: 2.43, z: -10.1395}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &821997161273288610
+--- !u!33 &5993757780026525303
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167956031601591863}
-  m_Mesh: {fileID: 4711208715938537054, guid: 78e788624921ad34bb1daed4ae49d8d2, type: 3}
---- !u!23 &6278137327248728378
+  m_GameObject: {fileID: 5094310784755980546}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6389445101993202905
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167956031601591863}
+  m_GameObject: {fileID: 5094310784755980546}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,13 +89,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1818058864650929972
+--- !u!135 &8294441042381703708
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167956031601591863}
+  m_GameObject: {fileID: 5094310784755980546}
   m_Material: {fileID: 13400000, guid: 43c2e405cd829d743a4c0203ba90b075, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -109,13 +110,13 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8781265002039452836
+--- !u!54 &637811990228877056
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167956031601591863}
+  m_GameObject: {fileID: 5094310784755980546}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -136,13 +137,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1073476807988790339
+--- !u!114 &811945968639104306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167956031601591863}
+  m_GameObject: {fileID: 5094310784755980546}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 822bc9090447b9c40833509c4a32e597, type: 3}
@@ -162,7 +163,7 @@ MonoBehaviour:
   maintainGrabOffset: 0
   ignoreWeight: 0
   parentOnGrab: 1
-  throwPower: 1.84
+  throwPower: 1.7
   jointBreakForce: 2500
   showAdvancedSettings: 1
   makeChildrenGrabbable: 1
@@ -197,13 +198,28 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   lockHandOnGrab: 0
---- !u!82 &4858918627225362532
+--- !u!114 &1109121859705619069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5094310784755980546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2aea2de75c7aac428a4c2cc43c65b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changer: {fileID: 0}
+  grab: {fileID: 0}
+  message: This is a bouncy ball
+--- !u!82 &5330022796446150100
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167956031601591863}
+  m_GameObject: {fileID: 5094310784755980546}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -293,13 +309,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8069300822592663538
+--- !u!114 &4728537591236004671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4167956031601591863}
+  m_GameObject: {fileID: 5094310784755980546}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c498b8ff53f43d43bb5f3b6001c2364, type: 3}
@@ -308,7 +324,7 @@ MonoBehaviour:
   collisionTriggers:
     serializedVersion: 2
     m_Bits: 2264924471
-  source: {fileID: 4858918627225362532}
+  source: {fileID: 5330022796446150100}
   clip: {fileID: 8300000, guid: c4bd31914d9dc334a9e7f510b8fba8fb, type: 3}
   velocityVolumeCurve:
     serializedVersion: 2
