@@ -7,6 +7,9 @@ TagManager:
   - Teleport
   - Obstacle
   - Objective
+  - FX
+  - Target
+  - World
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Teleport
   - Obstacle
   - Objective
-  - 
+  - xRay
   - 
   - 
   - 
