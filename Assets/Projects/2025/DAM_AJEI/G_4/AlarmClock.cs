@@ -13,6 +13,9 @@ public class AlarmClock : MonoBehaviour
     private float nextAlarmTime;    
     private bool alarmIsPlaying = false;
 
+    public bool pauseAlarm;
+
+
     private void Start()
     {
         SetRandomAlarmTime();
@@ -20,7 +23,7 @@ public class AlarmClock : MonoBehaviour
 
     private void Update()
     {
-        if (!alarmIsPlaying)
+        if (!alarmIsPlaying && !pauseAlarm)
         {
             timer += Time.deltaTime;
 
