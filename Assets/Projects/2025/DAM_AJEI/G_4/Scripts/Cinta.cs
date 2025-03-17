@@ -1,9 +1,8 @@
-using EntilandVR.DosCinco.DAM_AJEI.G_Cuatro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
+namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
 {
     public class Cinta : MonoBehaviour
     {
@@ -62,7 +61,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
                 }
                 if (Vector3.Distance(suitcase.transform.position, suitcasPositionC.position) < 0.1f)
                 {
-                    Debug.Log("Llegó a B");
+                    Debug.Log("Lleg?a B");
                     isMoving = false;
                 }
             }
@@ -115,7 +114,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
                                 Debug.Log("Maleta incorrecta, perdiendo puntos...");
                             }
                             DestroyPerson();
-                            Debug.Log("Llegó a C, destruyendo...");
+                            Debug.Log("Lleg?a C, destruyendo...");
                             Destroy(suitcase.gameObject);
                             Debug.Log("Destruido");
                             isButtonPressed = false;

@@ -1,9 +1,8 @@
-using EntilandVR.DosCinco.DAM_AJEI.G_Cuatro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
+namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
 {
     public class PersonManager : MonoBehaviour
     {
@@ -68,7 +67,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
 
                 if (isMovingToC && Vector3.Distance(person.transform.position, suitcasPositionC.position) < 0.1f)
                 {
-                    Debug.Log("Llegó a C");
+                    Debug.Log("Lleg?a C");
                     animator.SetBool("walk", false);
                     isMoving = false;
                 }
