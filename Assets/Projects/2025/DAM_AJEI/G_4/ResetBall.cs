@@ -2,54 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResetBall : MonoBehaviour
+namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
 {
-    private Vector3 initialPosition;
-    private Rigidbody rb;
-    public float respawnDelay = 10f; 
-
-    private Coroutine respawnCoroutine;
-    private bool isGrabbed = false;
-
-    void Start()
+    public class ResetBall : MonoBehaviour
     {
-        initialPosition = transform.position;
-        rb = GetComponent<Rigidbody>();
-    }
+        private Vector3 initialPosition;
+        private Rigidbody rb;
+        public float respawnDelay = 10f;
 
-    public void OnGrab()
-    {
-        isGrabbed = true;
-        if (respawnCoroutine != null)
+        private Coroutine respawnCoroutine;
+        private bool isGrabbed = false;
+
+        void Start()
         {
-            StopCoroutine(respawnCoroutine);
+            initialPosition = transform.position;
+            rb = GetComponent<Rigidbody>();
+        }
+
+        public void OnGrab()
+        {
+            isGrabbed = true;
+            if (respawnCoroutine != null)
+            {
+                StopCoroutine(respawnCoroutine);
+                respawnCoroutine = null;
+            }
+        }
+
+        public void OnRelease()
+        {
+            isGrabbed = false;
+            if (respawnCoroutine == null)
+            {
+                respawnCoroutine = StartCoroutine(RespawnAfterDelay());
+            }
+        }
+
+        private IEnumerator RespawnAfterDelay()
+        {
+            yield return new WaitForSeconds(respawnDelay);
+            if (!isGrabbed)
+            {
+                Respawn();
+            }
             respawnCoroutine = null;
         }
-    }
 
-    public void OnRelease()
-    {
-        isGrabbed = false;
-        if (respawnCoroutine == null)
+        private void Respawn()
         {
-            respawnCoroutine = StartCoroutine(RespawnAfterDelay());
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            transform.position = initialPosition;
         }
-    }
-
-    private IEnumerator RespawnAfterDelay()
-    {
-        yield return new WaitForSeconds(respawnDelay);
-        if (!isGrabbed)
-        {
-            Respawn();
-        }
-        respawnCoroutine = null;
-    }
-
-    private void Respawn()
-    {
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        transform.position = initialPosition;
     }
 }

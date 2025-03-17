@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectBase : MonoBehaviour
+namespace EntilandVR.DosCinco.DAM_AJEI_G_Cuatro
 {
-    public bool isLegal =  true;
+    public class ObjectBase : MonoBehaviour
+    {
+        public bool isLegal = true;
+    }
 }
+

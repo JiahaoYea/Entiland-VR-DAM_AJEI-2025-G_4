@@ -195,7 +195,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 0.99560815, b: 0.5896226, a: 1}
+  m_BackGroundColor: {r: 0.7058824, g: 0.8117647, b: 1, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1229,7 +1229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899726278536393137, guid: 39b189a0870d3054b940dd9d65539ff7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1716281122626678276, guid: 39b189a0870d3054b940dd9d65539ff7, type: 3}
       propertyPath: m_Mesh
@@ -4585,6 +4585,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 6317046d4fa299b488317fb21cf4836b, type: 2}
+    - target: {fileID: 5297481045903575103, guid: 9a34ddd163971de4283b179c51a8998d, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d80edf00be4412f4a8d75b2729d47c14, type: 3}
     - target: {fileID: 5409584676314464519, guid: 9a34ddd163971de4283b179c51a8998d, type: 3}
       propertyPath: m_Mesh
       value: 
