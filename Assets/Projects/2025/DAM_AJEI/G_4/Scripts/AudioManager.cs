@@ -14,11 +14,19 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
 
         [Header("----- Audio Clip -----")]
         public AudioClip trackClip;
-        public AudioClip bombClip;
-        public AudioClip footstepsClip;
-        public AudioClip fanClip;
-        public AudioClip breatheClip;
-        public AudioClip ExitSmoke;
+        public AudioClip buttonClip;
+        public AudioClip paperClip;
+        public AudioClip hiMan;
+        public AudioClip hiWoman;
+        public AudioClip hiWoman01;
+        public AudioClip hiWoman02;
+        public AudioClip hiWoman03;
+        public AudioClip thanks_ManClip;
+        public AudioClip thanks_WomanClip;
+        public AudioClip noTrespass_WomanClip;
+        public AudioClip noTrespass_ManClip;
+        public AudioClip cach_ManClip;
+        public AudioClip cach_WomanClip;
 
         private void Awake()
         {
