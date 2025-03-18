@@ -77,12 +77,20 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                         isButtonPressed = false;
                         Debug.Log("Maleta incorrecta, ganando puntos...");
                         Destroy(suitcase.gameObject);
+                        if(personManager.isMale_person)
+                            AudioManager.Instance.PlaySFX(AudioManager.Instance.noTrespass_ManClip);
+                        else
+                            AudioManager.Instance.PlaySFX(AudioManager.Instance.noTrespass_WomanClip);
                     }
                     else // Maleta legal
                     {
                         Points.Instance.hp--; // Pierdes 1 punto solo una vez
                         Debug.Log("Maleta correcta, perdiendo puntos...");
                         Debug.Log("Destruyendo maleta...");
+                        if (personManager.isMale_person)
+                            AudioManager.Instance.PlaySFX(AudioManager.Instance.);
+                        else
+                            AudioManager.Instance.PlaySFX(AudioManager.Instance.);
                         DestroyPerson();
                         Destroy(suitcase.gameObject);
                         isButtonPressed = false;
@@ -106,6 +114,10 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                             if (isLegal)
                             {
                                 Points.Instance.hp++; // Ganas 1 punto solo una vez
+                                if (personManager.isMale_person)
+                                    AudioManager.Instance.PlaySFX(AudioManager.Instance.thanks_ManClip);
+                                else
+                                    AudioManager.Instance.PlaySFX(AudioManager.Instance.thanks_WomanClip);
                                 Debug.Log("Maleta legal, ganando puntos...");
                             }
                             // Si la maleta es incorrecta
@@ -113,6 +125,10 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                             {
                                 Points.Instance.hp--; // Pierdes 1 punto solo una vez
                                 Debug.Log("Maleta incorrecta, perdiendo puntos...");
+                                if (personManager.isMale_person)
+                                    AudioManager.Instance.PlaySFX(AudioManager.Instance.);
+                                else
+                                    AudioManager.Instance.PlaySFX(AudioManager.Instance.);
                             }
                             DestroyPerson();
                             Debug.Log("Lleg?a C, destruyendo...");

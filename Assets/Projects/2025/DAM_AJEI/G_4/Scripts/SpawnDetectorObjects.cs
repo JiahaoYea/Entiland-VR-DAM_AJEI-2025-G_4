@@ -12,6 +12,8 @@ public class SpawnDetectorObjects : MonoBehaviour
     private GameObject detectableObject;
 
     public Cinta cinta;
+
+    public bool isMale;
     void Start()
     {
         cinta = FindAnyObjectByType<Cinta>();

@@ -29,6 +29,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
         public Vector3 startPos;
         public AlarmClock alarm;
 
+        public bool isMale_person;
+
         private SpawnDetectorObjects spawnDetectorObjects;
         void Start()
         {
@@ -71,6 +73,10 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 {
                     Debug.Log("Lleg?a C");
                     animator.SetBool("walk", false);
+                    if (isMale_person)
+                        AudioManager.Instance.PlaySFX(AudioManager.Instance.hiMan);
+                    else
+                        AudioManager.Instance.PlaySFX(AudioManager.Instance.hiWoman);
                     isMoving = false;
                 }
             }
@@ -94,6 +100,10 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 {
                     animator.SetBool("walk", false);
                     animator.SetBool("search", true);
+                    if (isMale_person)
+                        AudioManager.Instance.PlaySFX(AudioManager.Instance.cach_ManClip);
+                    else
+                        AudioManager.Instance.PlaySFX(AudioManager.Instance.cach_WomanClip);
                 }
             }
         }
@@ -106,6 +116,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 person.transform.parent = transform;
                 animator = person.GetComponent<Animator>();
                 spawnDetectorObjects = person.GetComponent<SpawnDetectorObjects>();
+                isMale_person = spawnDetectorObjects.isMale;
                 isMoving = true;
                 isMovingToC = false;
                 isButtonBlue = false;

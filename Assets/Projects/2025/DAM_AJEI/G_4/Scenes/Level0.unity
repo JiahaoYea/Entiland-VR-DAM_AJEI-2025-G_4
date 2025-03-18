@@ -4994,7 +4994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1729962105}
   SFXSource: {fileID: 1265641409}
-  trackClip: {fileID: 8300000, guid: d9466a1cdf9567a42b8c79c77a0280c2, type: 3}
+  trackClip: {fileID: 0}
   buttonClip: {fileID: 8300000, guid: 6665290826be7e0408de8a0b23115c88, type: 3}
   paperClip: {fileID: 8300000, guid: cc65a786a2f960143b6095236ccc59e2, type: 3}
   hiMan: {fileID: 8300000, guid: 6dcc107aeab6c9f4c9c4a56b48c5c154, type: 3}

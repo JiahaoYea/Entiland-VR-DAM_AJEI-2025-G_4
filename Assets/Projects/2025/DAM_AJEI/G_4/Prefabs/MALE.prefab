@@ -2187,6 +2187,8 @@ MonoBehaviour:
   - {fileID: 6589320365726729136}
   - {fileID: 1576607181997299311}
   ilegalObject: {fileID: 8164349434634271825, guid: 2a06d93840f3c2943ab3d047e8a2721f, type: 3}
+  cinta: {fileID: 0}
+  isMale: 1
 --- !u!1 &7848117554515649722
 GameObject:
   m_ObjectHideFlags: 0
