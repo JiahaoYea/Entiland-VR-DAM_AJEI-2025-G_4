@@ -28,6 +28,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
         public GameObject searchPos;
         public Vector3 startPos;
         public AlarmClock alarm;
+
+        private SpawnDetectorObjects spawnDetectorObjects;
         void Start()
         {
             startPos = player.transform.position;
@@ -103,6 +105,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 person = Instantiate(personPrefab[(int)Random.Range(0f, personPrefab.Length)], suitcasPositionA.position, Quaternion.identity);
                 person.transform.parent = transform;
                 animator = person.GetComponent<Animator>();
+                spawnDetectorObjects = person.GetComponent<SpawnDetectorObjects>();
                 isMoving = true;
                 isMovingToC = false;
                 isButtonBlue = false;

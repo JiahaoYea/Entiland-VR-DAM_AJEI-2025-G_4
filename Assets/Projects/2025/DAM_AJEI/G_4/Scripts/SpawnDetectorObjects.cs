@@ -1,3 +1,4 @@
+using EntilandVR.DosCinco.DAM_AJEI.G_Cuatro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,13 @@ public class SpawnDetectorObjects : MonoBehaviour
     public GameObject ilegalObject;
 
     private GameObject detectableObject;
+
+    public Cinta cinta;
     void Start()
     {
-        SpawnObjects();
+        cinta = FindAnyObjectByType<Cinta>();
+        if (cinta != null & !cinta.isSuitCaseLegal())
+            SpawnObjects();
     }
     void Update()
     {

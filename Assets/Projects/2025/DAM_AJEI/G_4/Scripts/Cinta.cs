@@ -61,7 +61,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 }
                 if (Vector3.Distance(suitcase.transform.position, suitcasPositionC.position) < 0.1f)
                 {
-                    Debug.Log("Lleg?a B");
+                    Debug.Log("Llega B");
                     isMoving = false;
                 }
             }
@@ -74,6 +74,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                     {
                         Points.Instance.hp++; // Ganas 1 punto solo una vez
                         blueButton.SetActive(true);
+                        isButtonPressed = false;
                         Debug.Log("Maleta incorrecta, ganando puntos...");
                         Destroy(suitcase.gameObject);
                     }
@@ -150,6 +151,10 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
             {
                 Debug.Log("notnull");
             }
+        }
+        public bool isSuitCaseLegal()
+        {
+            return isLegal;
         }
         public void DestroyPerson()
         {
