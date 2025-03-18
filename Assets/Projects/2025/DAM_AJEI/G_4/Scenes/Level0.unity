@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2581367346635881452, guid: 39b189a0870d3054b940dd9d65539ff7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.231
+      value: 2.107
       objectReference: {fileID: 0}
     - target: {fileID: 2581367346635881452, guid: 39b189a0870d3054b940dd9d65539ff7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -297,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2581367346635881452, guid: 39b189a0870d3054b940dd9d65539ff7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.435
+      value: -16.713
       objectReference: {fileID: 0}
     - target: {fileID: 2581367346635881452, guid: 39b189a0870d3054b940dd9d65539ff7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4527,8 +4527,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247813622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.366, y: -0.087, z: -16.557}
-  m_LocalScale: {x: 0.63761, y: 1.216815, z: 0.63761}
+  m_LocalPosition: {x: 2.464, y: -0.087, z: -16.557}
+  m_LocalScale: {x: 1.0916522, y: 1.216815, z: 1.0025142}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4994,7 +4994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1729962105}
   SFXSource: {fileID: 1265641409}
-  trackClip: {fileID: 0}
+  trackClip: {fileID: 8300000, guid: d3ea5bf76b5db1947b4405a22b44ebc5, type: 3}
   buttonClip: {fileID: 8300000, guid: 6665290826be7e0408de8a0b23115c88, type: 3}
   paperClip: {fileID: 8300000, guid: cc65a786a2f960143b6095236ccc59e2, type: 3}
   hiMan: {fileID: 8300000, guid: 6dcc107aeab6c9f4c9c4a56b48c5c154, type: 3}
@@ -5008,6 +5008,8 @@ MonoBehaviour:
   noTrespass_ManClip: {fileID: 8300000, guid: 5a01f1c0a418c6f438ab117d8d7320fe, type: 3}
   cach_ManClip: {fileID: 8300000, guid: 06221f8607434844081f0ef161adf22c, type: 3}
   cach_WomanClip: {fileID: 8300000, guid: cb282737201831845bcaaccaed72b93b, type: 3}
+  angry_ManClip: {fileID: 8300000, guid: 4864c09000439724497cae43d36b7867, type: 3}
+  angry_WomanClip: {fileID: 8300000, guid: 7b50b39d6f8e1024eba04c0a4e637348, type: 3}
 --- !u!4 &1280632459
 Transform:
   m_ObjectHideFlags: 0
@@ -7189,7 +7191,7 @@ AudioSource:
   m_GameObject: {fileID: 1729962104}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 8088886846816139531, guid: e3292ff9250ea7a49a62577325891e75, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.15
@@ -8411,6 +8413,7 @@ MonoBehaviour:
   searchPos: {fileID: 1989879993}
   startPos: {x: 0, y: 0, z: 0}
   alarm: {fileID: 1844389149}
+  isMale_person: 0
 --- !u!4 &1979551543
 Transform:
   m_ObjectHideFlags: 0
@@ -8455,7 +8458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989879993}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.523, y: 0, z: -6.722}
+  m_LocalPosition: {x: 2.131, y: 0, z: -6.722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8817,7 +8820,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -8998,7 +9001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1858438260179748396, guid: 9a34ddd163971de4283b179c51a8998d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.549
+      value: 2.744
       objectReference: {fileID: 0}
     - target: {fileID: 1858438260179748396, guid: 9a34ddd163971de4283b179c51a8998d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9006,7 +9009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1858438260179748396, guid: 9a34ddd163971de4283b179c51a8998d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.566
+      value: -16.497
       objectReference: {fileID: 0}
     - target: {fileID: 1858438260179748396, guid: 9a34ddd163971de4283b179c51a8998d, type: 3}
       propertyPath: m_LocalRotation.w

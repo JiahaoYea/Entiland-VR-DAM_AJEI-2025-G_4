@@ -27,6 +27,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
         public AudioClip noTrespass_ManClip;
         public AudioClip cach_ManClip;
         public AudioClip cach_WomanClip;
+        public AudioClip angry_ManClip;
+        public AudioClip angry_WomanClip;
 
         private void Awake()
         {
@@ -44,7 +46,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
         private void Start()
         {
             musicSource.clip = trackClip;
-            musicSource.volume = 0.35f;
             musicSource.Play();
         }
 

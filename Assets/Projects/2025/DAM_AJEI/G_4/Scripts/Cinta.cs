@@ -88,9 +88,9 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                         Debug.Log("Maleta correcta, perdiendo puntos...");
                         Debug.Log("Destruyendo maleta...");
                         if (personManager.isMale_person)
-                            AudioManager.Instance.PlaySFX(AudioManager.Instance.);
+                            AudioManager.Instance.PlaySFX(AudioManager.Instance.angry_ManClip);
                         else
-                            AudioManager.Instance.PlaySFX(AudioManager.Instance.);
+                            AudioManager.Instance.PlaySFX(AudioManager.Instance.angry_WomanClip);
                         DestroyPerson();
                         Destroy(suitcase.gameObject);
                         isButtonPressed = false;
@@ -126,9 +126,9 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                                 Points.Instance.hp--; // Pierdes 1 punto solo una vez
                                 Debug.Log("Maleta incorrecta, perdiendo puntos...");
                                 if (personManager.isMale_person)
-                                    AudioManager.Instance.PlaySFX(AudioManager.Instance.);
+                                    AudioManager.Instance.PlaySFX(AudioManager.Instance.angry_ManClip);
                                 else
-                                    AudioManager.Instance.PlaySFX(AudioManager.Instance.);
+                                    AudioManager.Instance.PlaySFX(AudioManager.Instance.angry_WomanClip);
                             }
                             DestroyPerson();
                             Debug.Log("Lleg?a C, destruyendo...");

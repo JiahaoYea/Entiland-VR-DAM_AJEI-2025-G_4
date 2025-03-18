@@ -30,7 +30,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
         public AlarmClock alarm;
 
         public bool isMale_person;
-
+        private bool audioPlayed = false;
         private SpawnDetectorObjects spawnDetectorObjects;
         void Start()
         {
@@ -100,10 +100,15 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 {
                     animator.SetBool("walk", false);
                     animator.SetBool("search", true);
-                    if (isMale_person)
-                        AudioManager.Instance.PlaySFX(AudioManager.Instance.cach_ManClip);
-                    else
-                        AudioManager.Instance.PlaySFX(AudioManager.Instance.cach_WomanClip);
+                    if (!audioPlayed)
+                    {
+                        if (isMale_person)
+                            AudioManager.Instance.PlaySFX(AudioManager.Instance.cach_ManClip);
+                        else
+                            AudioManager.Instance.PlaySFX(AudioManager.Instance.cach_WomanClip);
+
+                        audioPlayed = true;
+                    }
                 }
             }
         }
@@ -120,6 +125,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
                 isMoving = true;
                 isMovingToC = false;
                 isButtonBlue = false;
+                audioPlayed = false;
             }
             else
             {

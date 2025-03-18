@@ -43,7 +43,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Cuatro
         {
             yield return new WaitForSeconds(delay);
             Destroy(obj);
-            circleFill.fillAmount = 0f; 
+            circleFill.fillAmount = 0f;
+            beepAudio.Stop();
         }
 
         private IEnumerator IncreaseFill()
